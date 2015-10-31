@@ -1,6 +1,7 @@
 Premise :   Gq /\ Gj is true or false
 if Zxy where x > 1 , then Gx is true
 or if Mxy where Mxy >= 2 then Gx is true
+forall x y:G, (M x y >= 2) -> G y
 
 Arq /\ Amq /\ Afq
 Arj /\ Amj /\ Afj
