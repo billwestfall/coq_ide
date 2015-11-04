@@ -1,0 +1,148 @@
+MacBook-Air:~ billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0338a.in
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 93122 was started by billw on MacBook-Air.local,
+Tue Nov  3 19:07:51 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0338a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/logic_book/07chapt/page0338a.in
+
+
+formulas(assumptions).
+(all x (Fd -> ~((exists y (R & Sx))))).
+Ssb & Rb.
+end_of_list.
+
+formulas(goals).
+~(Fsd).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (all x (Fd -> ~((exists y (R & Sx))))) # label(non_clause).  [assumption].
+2 Ssb & Rb # label(non_clause).  [assumption].
+3 ~(Fsd) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-Fd | ~((exists x (R & Sx))).  [clausify(1)].
+Ssb.  [clausify(2)].
+Rb.  [clausify(2)].
+-~(Fsd).  [deny(3)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+Eliminating ~/1
+4 -~(Fsd).  [deny(3)].
+5 -Fd | ~((exists x (R & Sx))).  [clausify(1)].
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ Rb, Ssb ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
+
+Auto_process settings:  (no changes).
+
+kept:      6 Ssb.  [clausify(2)].
+kept:      7 Rb.  [clausify(2)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+6 Ssb.  [clausify(2)].
+7 Rb.  [clausify(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=1): 6 Ssb.  [clausify(2)].
+
+given #2 (I,wt=1): 7 Rb.  [clausify(2)].
+
+============================== STATISTICS ============================
+
+Given=2. Generated=2. Kept=2. proofs=0.
+Usable=2. Sos=0. Demods=0. Limbo=0, Disabled=4. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=0.02.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+SEARCH FAILED
+
+SEARCH FAILED
+
+Exiting with failure.
+
+------ process 93122 exit (sos_empty) ------
+
+Process 93122 exit (sos_empty) Tue Nov  3 19:07:51 2015
+MacBook-Air:~ billw$
+
+formulas(assumptions).
+
+ % assumption
+(all x (Fd -> (~(exists y (R & Sx))))).
+
+% assumption
+(Ssb & Rb).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  ~(Fsd).
+end_of_list.
