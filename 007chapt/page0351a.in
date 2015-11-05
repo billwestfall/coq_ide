@@ -1,0 +1,156 @@
+MacBook-Air:deploy billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0351a.in
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 50344 was started by billw on MacBook-Air.local,
+Wed Nov  4 20:41:16 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0351a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/logic_book/07chapt/page0351a.in
+
+
+formulas(assumptions).
+-Ah & (all y (-y = h -> Ay)).
+end_of_list.
+
+formulas(goals).
+-(Ah | Ab) & (all x (-(x = h | x = b) -> Ax)).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 -Ah & (all y (-y = h -> Ay)) # label(non_clause).  [assumption].
+2 -(Ah | Ab) & (all x (-(x = h | x = b) -> Ax)) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-Ah.  [clausify(1)].
+-x != h | Ay.  [clausify(1)].
+Ah | Ab | c1 != h.  [deny(2)].
+Ah | Ab | b != c1.  [deny(2)].
+Ah | Ab | -Ax.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (non-Horn, no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ =, Ab, Ah, Ax, Ay ]).
+Function symbol precedence:  function_order([ h, b, c1, - ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(binary_resolution).  % (non-Horn)
+  % set(neg_ur_resolution).  % (non-Horn, less than 100 clauses)
+
+Auto_process settings:
+  % set(factor).  % (non-Horn)
+  % set(unit_deletion).  % (non-Horn)
+
+kept:      3 -Ah.  [clausify(1)].
+kept:      4 -x != h | Ay.  [clausify(1)].
+           5 Ah | Ab | c1 != h.  [deny(2)].
+kept:      6 Ab | c1 != h.  [copy(5),unit_del(a,3)].
+           7 Ah | Ab | b != c1.  [deny(2)].
+kept:      8 Ab | c1 != b.  [copy(7),flip(c),unit_del(a,3)].
+           9 Ah | Ab | -Ax.  [deny(2)].
+kept:      10 Ab | -Ax.  [copy(9),unit_del(a,3)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+3 -Ah.  [clausify(1)].
+4 -x != h | Ay.  [clausify(1)].
+6 Ab | c1 != h.  [copy(5),unit_del(a,3)].
+8 Ab | c1 != b.  [copy(7),flip(c),unit_del(a,3)].
+10 Ab | -Ax.  [copy(9),unit_del(a,3)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=1): 3 -Ah.  [clausify(1)].
+
+given #2 (I,wt=5): 4 -x != h | Ay.  [clausify(1)].
+
+given #3 (I,wt=4): 6 Ab | c1 != h.  [copy(5),unit_del(a,3)].
+
+given #4 (I,wt=4): 8 Ab | c1 != b.  [copy(7),flip(c),unit_del(a,3)].
+
+given #5 (I,wt=2): 10 Ab | -Ax.  [copy(9),unit_del(a,3)].
+
+============================== STATISTICS ============================
+
+Given=5. Generated=5. Kept=5. proofs=0.
+Usable=5. Sos=0. Demods=0. Limbo=0, Disabled=5. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=4.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+SEARCH FAILED
+
+SEARCH FAILED
+
+Exiting with failure.
+
+------ process 50344 exit (sos_empty) ------
+
+Process 50344 exit (sos_empty) Wed Nov  4 20:41:16 2015
+MacBook-Air:deploy billw$
+
+formulas(assumptions).
+
+ % assumption
+-Ah & (all y (-y = h -> Ay)).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  -(Ah | Ab) & (all x (-(x = h | x = b) -> Ax)).
+end_of_list.
