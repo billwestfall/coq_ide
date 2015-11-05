@@ -1,0 +1,41 @@
+MacBook-Air:deploy billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0351b.in
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 51303 was started by billw on MacBook-Air.local,
+Wed Nov  4 20:55:50 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0351b.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/logic_book/07chapt/page0351b.in
+
+
+formulas(assumptions).
+(exists x exists y (Ax & Py -> &(Nxb & Nyb))).
+end_of_list.
+
+formulas(goals).
+(exists x exists y (Ax & Ay & Nxb & Nyb & -x = y)) & (exists x exists y (Px & Py & Nxb & Nyb & -x = y)).
+end_of_list.
+%%ERROR: The following symbols/arities are used as both relation and function symbols: Nxb/0, Nyb/0.
+
+
+Fatal error:  The following symbols/arities are used as both relation and function symbols: Nxb/0, Nyb/0
+
+
+Fatal error:  The following symbols/arities are used as both relation and function symbols: Nxb/0, Nyb/0
+
+MacBook-Air:deploy billw$
+
+formulas(assumptions).
+
+ % assumption
+exists x exists y ((Ax & Py) -> & (Nxb & Nyb)).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  (exists x exists y (((Ax & Ay) & (Nxb & Nyb)) & -x = y)) & (exists x exists y (((Px & Py) & (Nxb & Nyb)) & -x = y)).
+end_of_list.
