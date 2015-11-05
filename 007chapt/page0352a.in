@@ -1,0 +1,151 @@
+MacBook-Air:deploy billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0352a.in
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 52211 was started by billw on MacBook-Air.local,
+Wed Nov  4 21:08:27 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0352a.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/logic_book/07chapt/page0352a.in
+
+
+formulas(assumptions).
+(all x all y all z (Px & Py & Pz & Nxb & Nyb & Nzb -> x = y | x = z | x = z)).
+end_of_list.
+
+formulas(goals).
+(all x all y all z (Px & Py & Pz & Nxb & Nyb & Nzb -> z = x | z = y)).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (all x all y all z (Px & Py & Pz & Nxb & Nyb & Nzb -> x = y | x = z | x = z)) # label(non_clause).  [assumption].
+2 (all x all y all z (Px & Py & Pz & Nxb & Nyb & Nzb -> z = x | z = y)) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-Px | -Py | -Pz | -Nxb | -Nyb | -Nzb | x = y | z = y.  [clausify(1)].
+Px.  [deny(2)].
+Py.  [deny(2)].
+Pz.  [deny(2)].
+Nxb.  [deny(2)].
+Nyb.  [deny(2)].
+Nzb.  [deny(2)].
+c3 != c1.  [deny(2)].
+c3 != c2.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (non-Horn, no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ =, Nxb, Nyb, Nzb, Px, Py, Pz ]).
+Function symbol precedence:  function_order([ c1, c2, c3 ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+  % set(binary_resolution).  % (non-Horn)
+  % set(neg_ur_resolution).  % (non-Horn, less than 100 clauses)
+
+Auto_process settings:
+  % set(factor).  % (non-Horn)
+  % set(unit_deletion).  % (non-Horn)
+
+kept:      3 -Px | -Py | -Pz | -Nxb | -Nyb | -Nzb | x = y | z = y.  [clausify(1)].
+kept:      4 Px.  [deny(2)].
+kept:      5 Py.  [deny(2)].
+kept:      6 Pz.  [deny(2)].
+kept:      7 Nxb.  [deny(2)].
+kept:      8 Nyb.  [deny(2)].
+kept:      9 Nzb.  [deny(2)].
+kept:      10 c3 != c1.  [deny(2)].
+kept:      11 c3 != c2.  [deny(2)].
+kept:      12 x = y.  [factor(3,g,h),unit_del(a,4),unit_del(b,5),unit_del(c,6),unit_del(d,7),unit_del(e,8),unit_del(f,9)].
+-------- Proof 1 --------
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 12.
+% Level of proof is 3.
+% Maximum clause weight is 12.000.
+% Given clauses 0.
+
+1 (all x all y all z (Px & Py & Pz & Nxb & Nyb & Nzb -> x = y | x = z | x = z)) # label(non_clause).  [assumption].
+2 (all x all y all z (Px & Py & Pz & Nxb & Nyb & Nzb -> z = x | z = y)) # label(non_clause) # label(goal).  [goal].
+3 -Px | -Py | -Pz | -Nxb | -Nyb | -Nzb | x = y | z = y.  [clausify(1)].
+4 Px.  [deny(2)].
+5 Py.  [deny(2)].
+6 Pz.  [deny(2)].
+7 Nxb.  [deny(2)].
+8 Nyb.  [deny(2)].
+9 Nzb.  [deny(2)].
+11 c3 != c2.  [deny(2)].
+12 x = y.  [factor(3,g,h),unit_del(a,4),unit_del(b,5),unit_del(c,6),unit_del(d,7),unit_del(e,8),unit_del(f,9)].
+13 $F.  [resolve(12,a,11,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=0. Generated=10. Kept=10. proofs=1.
+Usable=0. Sos=0. Demods=0. Limbo=9, Disabled=9. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=0.04.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 52211 exit (max_proofs) ------
+
+Process 52211 exit (max_proofs) Wed Nov  4 21:08:27 2015
+MacBook-Air:deploy billw$
+
+formulas(assumptions).
+
+ % assumption
+all x all y all z ((((Px & Py) & Pz) & ((Nxb & Nyb) & Nzb)) -> (((x = y) | (x = z)) | (x = z))).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  all x all y all z ((((Px & Py) & Pz) & ((Nxb & Nyb) & Nzb)) -> (((z = x) | (z = y)))).
+end_of_list.
