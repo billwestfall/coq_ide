@@ -1,0 +1,149 @@
+MacBook-Air:~ billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0356b.in
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 96672 was started by billw on MacBook-Air.local,
+Thu Nov  5 20:14:19 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0356b.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/logic_book/07chapt/page0356b.in
+
+
+formulas(assumptions).
+(exists x (Rx & Dxp & (all y (Ry & Dyp)) -> y = x)) & Ixg & Ixe.
+end_of_list.
+
+formulas(goals).
+(exists x (Dxp & Ixg & Ixe)).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (exists x (Rx & Dxp & (all y (Ry & Dyp)) -> y = x)) & Ixg & Ixe # label(non_clause).  [assumption].
+2 (exists x (Dxp & Ixg & Ixe)) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-Rx | -Dxp | -Ry | -Dyp | x = f1(x).  [clausify(1)].
+Ixg.  [clausify(1)].
+Ixe.  [clausify(1)].
+-Dxp | -Ixg | -Ixe.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ =, Dxp, Dyp, Ixe, Ixg, Rx, Ry ]).
+Function symbol precedence:  function_order([ f1 ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+  % set(hyper_resolution).  % (nonunit Horn with equality)
+    % set(hyper_resolution) -> set(pos_hyper_resolution).
+  % set(neg_ur_resolution).  % (nonunit Horn with equality)
+  % assign(para_lit_limit, 5).  % (nonunit Horn with equality)
+
+Auto_process settings:
+  % set(unit_deletion).  % (Horn set with negative nonunits)
+
+           3 -Rx | -Dxp | -Ry | -Dyp | x = f1(x).  [clausify(1)].
+kept:      4 -Rx | -Dxp | -Ry | -Dyp | f1(x) = x.  [copy(3),flip(e)].
+kept:      5 Ixg.  [clausify(1)].
+kept:      6 Ixe.  [clausify(1)].
+           7 -Dxp | -Ixg | -Ixe.  [deny(2)].
+kept:      8 -Dxp.  [copy(7),unit_del(b,5),unit_del(c,6)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+5 Ixg.  [clausify(1)].
+6 Ixe.  [clausify(1)].
+8 -Dxp.  [copy(7),unit_del(b,5),unit_del(c,6)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=1): 5 Ixg.  [clausify(1)].
+
+given #2 (I,wt=1): 6 Ixe.  [clausify(1)].
+
+given #3 (I,wt=1): 8 -Dxp.  [copy(7),unit_del(b,5),unit_del(c,6)].
+
+============================== STATISTICS ============================
+
+Given=3. Generated=4. Kept=4. proofs=0.
+Usable=3. Sos=0. Demods=0. Limbo=0, Disabled=5. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=1.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=2.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+SEARCH FAILED
+
+SEARCH FAILED
+
+Exiting with failure.
+
+------ process 96672 exit (sos_empty) ------
+
+Process 96672 exit (sos_empty) Thu Nov  5 20:14:19 2015
+MacBook-Air:~ billw$
+
+formulas(assumptions).
+
+ % assumption
+ exists x((Rx & Dxp) & (all y (Ry & Dyp)) -> y = x) & (Ixg & Ixe).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  exists x (Dxp & (Ixg & Ixe)).
+end_of_list.
