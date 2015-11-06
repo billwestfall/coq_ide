@@ -1,0 +1,173 @@
+MacBook-Air:~ billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0353b.in
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 95571 was started by billw on MacBook-Air.local,
+Thu Nov  5 19:58:09 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/07chapt/page0353b.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/logic_book/07chapt/page0353b.in
+
+
+formulas(assumptions).
+Pb & Eb & ((all z (Pz & -z = b)) -> -Ez).
+end_of_list.
+
+formulas(goals).
+Pb & Eb & (all z (Pz & Ez -> z = b)).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 Pb & Eb & ((all z (Pz & -z = b)) -> -Ez) # label(non_clause).  [assumption].
+2 Pb & Eb & (all z (Pz & Ez -> z = b)) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+Pb.  [clausify(1)].
+Eb.  [clausify(1)].
+-Pz | -c1 != b | -Ez.  [clausify(1)].
+-Pb | -Eb | Pz.  [deny(2)].
+-Pb | -Eb | Ez.  [deny(2)].
+-Pb | -Eb | b != c2.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:
+  % assign(max_proofs, 2).  % (Horn set with more than one neg. clause)
+
+WARNING: denials share constants (see output).
+
+
+WARNING, because some of the denials share constants,
+some of the denials or their descendents may be subsumed,
+preventing the target number of proofs from being found.
+The shared constants are:  b.
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ =, Eb, Pb, Ez, Pz ]).
+Function symbol precedence:  function_order([ b, c1, c2, - ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
+
+Auto_process settings:
+  % set(unit_deletion).  % (Horn set with negative nonunits)
+
+kept:      3 Pb.  [clausify(1)].
+kept:      4 Eb.  [clausify(1)].
+kept:      5 -Pz | -c1 != b | -Ez.  [clausify(1)].
+           6 -Pb | -Eb | Pz.  [deny(2)].
+kept:      7 Pz.  [copy(6),unit_del(a,3),unit_del(b,4)].
+           8 -Pb | -Eb | Ez.  [deny(2)].
+kept:      9 Ez.  [copy(8),unit_del(a,3),unit_del(b,4)].
+           10 -Pb | -Eb | b != c2.  [deny(2)].
+kept:      11 c2 != b.  [copy(10),flip(c),unit_del(a,3),unit_del(b,4)].
+kept:      12 -c1 != b.  [back_unit_del(5),unit_del(a,7),unit_del(c,9)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+3 Pb.  [clausify(1)].
+4 Eb.  [clausify(1)].
+7 Pz.  [copy(6),unit_del(a,3),unit_del(b,4)].
+9 Ez.  [copy(8),unit_del(a,3),unit_del(b,4)].
+11 c2 != b.  [copy(10),flip(c),unit_del(a,3),unit_del(b,4)].
+12 -c1 != b.  [back_unit_del(5),unit_del(a,7),unit_del(c,9)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=1): 3 Pb.  [clausify(1)].
+
+given #2 (I,wt=1): 4 Eb.  [clausify(1)].
+
+given #3 (I,wt=1): 7 Pz.  [copy(6),unit_del(a,3),unit_del(b,4)].
+
+given #4 (I,wt=1): 9 Ez.  [copy(8),unit_del(a,3),unit_del(b,4)].
+
+given #5 (I,wt=3): 11 c2 != b.  [copy(10),flip(c),unit_del(a,3),unit_del(b,4)].
+
+given #6 (I,wt=4): 12 -c1 != b.  [back_unit_del(5),unit_del(a,7),unit_del(c,9)].
+
+============================== STATISTICS ============================
+
+Given=6. Generated=7. Kept=7. proofs=0.
+Usable=6. Sos=0. Demods=0. Limbo=0, Disabled=7. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=1.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=1.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+SEARCH FAILED
+
+SEARCH FAILED
+
+Exiting with failure.
+
+------ process 95571 exit (sos_empty) ------
+
+Process 95571 exit (sos_empty) Thu Nov  5 19:58:09 2015
+MacBook-Air:~ billw$
+
+formulas(assumptions).
+
+ % assumption
+ (Pb & Eb) & (all z (Pz & (-z = b)) -> -Ez).
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  (Pb & Eb) & (all z((Pz & Ez) -> (z = b))).
+end_of_list.
