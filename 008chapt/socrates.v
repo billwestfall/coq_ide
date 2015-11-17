@@ -85,5 +85,4 @@ intro HA.
 apply H.
 apply H.
 exact HA.
-assumption.
 Qed.
