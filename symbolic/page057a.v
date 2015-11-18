@@ -1,50 +1,26 @@
-(* MacBook-Air:~ billw$ /Applications/CoqIDE_8.4pl5.app/Contents/Resources/bin/coqtop
+MacBook-Air:~ billw$ /Applications/CoqIDE_8.4pl5.app/Contents/Resources/bin/coqtop
 Welcome to Coq 8.4pl5 (October 2014)
 
-Coq < Section Books.
+Coq < Section Cats.
 
-Coq < Goal forall x y m:Prop, (~(x -> m) /\ ~(y -> ~m)) -> ~(x -> y).
-1 subgoal
+Coq < Variables c k f:Prop.
+c is assumed
+k is assumed
+f is assumed
 
-  ============================
-   forall x y m : Prop, ~ (x -> m) /\ ~ (y -> ~ m) -> ~ (x -> y)
-
-Unnamed_thm < intros.
-1 subgoal
-
-  x : Prop
-  y : Prop
-  m : Prop
-  H : ~ (x -> m) /\ ~ (y -> ~ m)
-  ============================
-   ~ (x -> y)
-
-Unnamed_thm < elim H.
-1 subgoal
-
-  x : Prop
-  y : Prop
-  m : Prop
-  H : ~ (x -> m) /\ ~ (y -> ~ m)
-  ============================
-   ~ (x -> m) -> ~ (y -> ~ m) -> ~ (x -> y)
-
-Unnamed_thm < auto.
-No more subgoals.
-
-Unnamed_thm < Qed.
-intros.
-elim H.
-auto.
-
-Unnamed_thm is defined
+Coq < Goal forall c f, (exists k, ((c -> f) /\ (k -> c)) -> (k -> f)).
+Toplevel input, characters 30-36:
+> Goal forall c f, (exists k, ((c -> f) /\ (k -> c)) -> (k -> f)).
+>                               ^^^^^^
+Error:
+In environment
+c : Prop
+k : Prop
+f : Prop
+c0 : Type
+f0 : Type
+k0 : ?3
+The term "c0 -> f0" has type "Type" while it is expected to have type
+"Prop".
 
 Coq <
-*)
-
-Section Books.
-Goal forall x y m:Prop, (~(x -> m) /\ ~(y -> ~m)) -> ~(x -> y).
-intros.
-elim H.
-auto.
-Qed.
