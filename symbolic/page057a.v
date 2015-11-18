@@ -1,26 +1,62 @@
+(*
 MacBook-Air:~ billw$ /Applications/CoqIDE_8.4pl5.app/Contents/Resources/bin/coqtop
 Welcome to Coq 8.4pl5 (October 2014)
 
 Coq < Section Cats.
 
-Coq < Variables c k f:Prop.
+Coq < Variables c f k:Prop.
 c is assumed
-k is assumed
 f is assumed
+k is assumed
 
-Coq < Goal forall c f, (exists k, ((c -> f) /\ (k -> c)) -> (k -> f)).
-Toplevel input, characters 30-36:
-> Goal forall c f, (exists k, ((c -> f) /\ (k -> c)) -> (k -> f)).
->                               ^^^^^^
-Error:
-In environment
-c : Prop
-k : Prop
-f : Prop
-c0 : Type
-f0 : Type
-k0 : ?3
-The term "c0 -> f0" has type "Type" while it is expected to have type
-"Prop".
+Coq < Goal ((c -> f) /\ (k -> c)) -> (k -> f).
+1 subgoal
+
+  c : Prop
+  f : Prop
+  k : Prop
+  ============================
+   (c -> f) /\ (k -> c) -> k -> f
+
+Unnamed_thm < intros.
+1 subgoal
+
+  c : Prop
+  f : Prop
+  k : Prop
+  H : (c -> f) /\ (k -> c)
+  H0 : k
+  ============================
+   f
+
+Unnamed_thm < elim H.
+1 subgoal
+
+  c : Prop
+  f : Prop
+  k : Prop
+  H : (c -> f) /\ (k -> c)
+  H0 : k
+  ============================
+   (c -> f) -> (k -> c) -> f
+
+Unnamed_thm < auto.
+No more subgoals.
+
+Unnamed_thm < Qed.
+intros.
+elim H.
+auto.
+
+Unnamed_thm is defined
 
 Coq <
+*)
+
+Section Cats.
+Variables c f k:Prop.
+Goal ((c -> f) /\ (k -> c)) -> (k -> f).
+intros.
+elim H.
+auto.
+Qed.
