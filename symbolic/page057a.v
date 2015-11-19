@@ -40,17 +40,22 @@ Unnamed_thm < elim H.
   ============================
    (c -> f) -> (k -> c) -> f
 
-Unnamed_thm < auto.
+Unnamed_thm < info_auto.
+(* info auto : *)
+ intro.
+ intro.
+ apply H1.
+  apply H2.
+   assumption.
 No more subgoals.
 
 Unnamed_thm < Qed.
 intros.
 elim H.
-auto.
+info_auto.
 
 Unnamed_thm is defined
 
-Coq <
 *)
 
 Section Cats.
@@ -58,5 +63,5 @@ Variables c f k:Prop.
 Goal ((c -> f) /\ (k -> c)) -> (k -> f).
 intros.
 elim H.
-auto.
+info_auto.
 Qed.
