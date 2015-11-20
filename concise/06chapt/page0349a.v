@@ -44,7 +44,6 @@ Unnamed_thm < intro.
   ============================
    p \/ r -> q \/ s
 
-
 Unnamed_thm < intros.
 1 subgoal
 
@@ -260,10 +259,28 @@ Unnamed_thm < left.
 subgoal 2 is:
  q \/ s
 
-Unnamed_thm < info_auto.
-(* info auto : *)
- apply H.
-  assumption.
+Unnamed_thm < apply H.
+2 subgoals
+
+  p : Prop
+  q : Prop
+  r : Prop
+  s : Prop
+  H5 : (p -> q) /\ (r -> s)
+  H6 : p \/ r
+  H : p -> q
+  H0 : r -> s
+  H1 : p \/ r
+  H2 : p
+  H3 : p -> q
+  H4 : r -> s
+  ============================
+   p
+
+subgoal 2 is:
+ q \/ s
+
+Unnamed_thm < exact H2.
 1 subgoal
 
   p : Prop
@@ -279,20 +296,45 @@ Unnamed_thm < info_auto.
   ============================
    q \/ s
 
-Unnamed_thm < info_auto.
-(* info auto : *)
- apply or_intror.
-  apply H4.
-   assumption.
+Unnamed_thm < apply or_intror.
+1 subgoal
+
+  p : Prop
+  q : Prop
+  r : Prop
+  s : Prop
+  H : ((p -> q) /\ (r -> s)) /\ (p \/ r)
+  H0 : (p -> q) /\ (r -> s)
+  H1 : p \/ r
+  H2 : r
+  H3 : p -> q
+  H4 : r -> s
+  ============================
+   s
+
+Unnamed_thm < apply H4.
+1 subgoal
+
+  p : Prop
+  q : Prop
+  r : Prop
+  s : Prop
+  H : ((p -> q) /\ (r -> s)) /\ (p \/ r)
+  H0 : (p -> q) /\ (r -> s)
+  H1 : p \/ r
+  H2 : r
+  H3 : p -> q
+  H4 : r -> s
+  ============================
+   r
+
+Unnamed_thm < exact H2.
 No more subgoals.
 
 Unnamed_thm < Qed.
 intros.
 elim H.
 intro.
-info_auto.
-intros.
-info_auto.
 intros.
 elim H0.
 elim H1.
@@ -305,13 +347,17 @@ elim H1.
  destruct H as (H5, H6).
  destruct H0.
  left.
- info_auto.
+ apply H.
+ exact H2.
 
- info_auto.
+ apply or_intror.
+ apply H4.
+ exact H2.
 
 Unnamed_thm is defined
 
 Coq <
+
 
 
 *)
@@ -321,9 +367,6 @@ Goal forall p q r s:Prop, (((p -> q) /\ (r ->s)) /\ (p \/ r)) -> (q \/ s).
 intros.
 elim H.
 intro.
-info_auto.
-intros.
-info_auto.
 intros.
 elim H0.
 elim H1.
@@ -336,6 +379,9 @@ elim H1.
  destruct H as (H5, H6).
  destruct H0.
  left.
- info_auto.
- info_auto.
+ apply H.
+ exact H2.
+ apply or_intror.
+ apply H4.
+ exact H2.
 Qed.
