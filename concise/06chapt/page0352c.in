@@ -1,0 +1,166 @@
+%BEGIN
+MacBook-Air:~ billw$ /Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/concise/page0352c.in
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 99499 was started by billw on MacBook-Air.local,
+Fri Nov 20 20:17:58 2015
+The command was "/Users/billw/Downloads/LADR-2009-11A/bin/prover9 -f /Users/billw/Documents/sage/logic_book/concise/page0352c.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /Users/billw/Documents/sage/logic_book/concise/page0352c.in
+
+
+formulas(assumptions).
+F | D -> F & D.
+F & D.
+end_of_list.
+
+formulas(goals).
+F | D.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 F | D -> F & D # label(non_clause).  [assumption].
+2 F & D # label(non_clause).  [assumption].
+3 F | D # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+-F | D.  [clausify(1)].
+-D | F.  [clausify(1)].
+F.  [clausify(2)].
+D.  [clausify(2)].
+-F.  [deny(3)].
+-D.  [deny(3)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:
+  % assign(max_proofs, 2).  % (Horn set with more than one neg. clause)
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ D, F ]).
+Function symbol precedence:  function_order([ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(neg_binary_resolution).  % (HNE depth_diff=0)
+  % clear(ordered_res).  % (HNE depth_diff=0)
+  % set(ur_resolution).  % (HNE depth_diff=0)
+    % set(ur_resolution) -> set(pos_ur_resolution).
+    % set(ur_resolution) -> set(neg_ur_resolution).
+
+Auto_process settings:  (no changes).
+
+kept:      4 -F | D.  [clausify(1)].
+kept:      5 -D | F.  [clausify(1)].
+kept:      6 F.  [clausify(2)].
+kept:      7 D.  [clausify(2)].
+kept:      8 -F.  [deny(3)].
+-------- Proof 1 --------
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 5.
+% Level of proof is 2.
+% Maximum clause weight is 1.000.
+% Given clauses 0.
+
+2 F & D # label(non_clause).  [assumption].
+3 F | D # label(non_clause) # label(goal).  [goal].
+6 F.  [clausify(2)].
+8 -F.  [deny(3)].
+9 $F.  [resolve(8,a,6,a)].
+
+============================== end of proof ==========================
+kept:      10 -D.  [deny(3)].
+-------- Proof 2 --------
+
+============================== PROOF =================================
+
+% Proof 2 at 0.01 (+ 0.00) seconds.
+% Length of proof is 5.
+% Level of proof is 2.
+% Maximum clause weight is 1.000.
+% Given clauses 0.
+
+2 F & D # label(non_clause).  [assumption].
+3 F | D # label(non_clause) # label(goal).  [goal].
+7 D.  [clausify(2)].
+10 -D.  [deny(3)].
+11 $F.  [resolve(10,a,7,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=0. Generated=6. Kept=6. proofs=2.
+Usable=0. Sos=0. Demods=0. Limbo=5, Disabled=6. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=0.03.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 2 proofs.
+
+------ process 99499 exit (max_proofs) ------
+
+Process 99499 exit (max_proofs) Fri Nov 20 20:17:58 2015
+MacBook-Air:~ billw$
+
+END%
+
+formulas(assumptions).
+
+ % assumption
+   (F | D) -> (F & D).
+
+  % assumption
+   F & D.
+
+   % assumption
+
+
+end_of_list.
+
+formulas(goals).
+ % goal
+  (F | D).
+end_of_list.
