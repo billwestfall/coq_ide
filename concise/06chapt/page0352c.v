@@ -101,7 +101,7 @@ Coq <
 
 *)
 
-Section Destructive_Dilemma.
+Section Valid_Consequent.
 Goal forall f d:Prop, (((f \/ d) -> (f /\ d)) /\ (f /\ d)) -> (f \/ d).
 intros.
 elim H.
