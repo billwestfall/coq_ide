@@ -34,7 +34,7 @@ Coq <
 
 *)
 
-Section Simplification_A.
+Section Simplification_B.
 Goal forall m t s r:Prop, ((m \/ t) /\ (s -> r)) -> (m \/ t).
 intros.
 apply H.
