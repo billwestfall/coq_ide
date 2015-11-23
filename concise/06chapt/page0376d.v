@@ -42,7 +42,7 @@ Coq <
 
 *)
 
-Section Conjunction_B.
+Section Addition_A.
 Goal forall s t:Prop, s -> (s \/ ~t).
 intros.
 left.
