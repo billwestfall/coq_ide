@@ -107,3 +107,4 @@ intro.
 destruct H0.
  exact H0.
  firstorder.
+ Qed.
