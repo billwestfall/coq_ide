@@ -27,3 +27,5 @@ Unnamed_thm < Qed.
 crush.
 
 Unnamed_thm is defined
+
+Coq < 
