@@ -13,4 +13,4 @@ Require Import Classical.
 Load CpdtTactics.
 crush.
 Qed. `
-<\pre>
+</pre>
