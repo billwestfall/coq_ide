@@ -1,6 +1,6 @@
-Feature: Run simple command
+Feature: Run proofs from command line
 
-     Scenario: Run a simple command with a before hook
+     Scenario: Run a passing proof
          Given a file named "bin/test.sh" with:
            """
            #!/usr/bin/env bash -v
@@ -13,7 +13,7 @@ Feature: Run simple command
           Error
           """
 
-      Scenario: Run a simple command with a before hook
+      Scenario: Run a failing proof
           Given a file named "bin/test02.sh" with:
             """
             #!/usr/bin/env bash -v
