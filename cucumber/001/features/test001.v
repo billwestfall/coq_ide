@@ -1,7 +1,6 @@
-Theorem Restart_03 : forall a b c:Prop, ((a \/ b) /\ (b \/ c)) -> (a \/ b \/ c).
+Theorem my_first_proof : (forall A : Prop, A -> A).
 Proof.
-Add LoadPath "/Users/Shared/Files/cptd/src/" as CpdtTactics.
-Require Import Classical.
-Load CpdtTactics.
-crush.
+intros A.
+intros proof_of_A.
+exact proof_of_A.
 Qed.
