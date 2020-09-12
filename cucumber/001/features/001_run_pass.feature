@@ -26,5 +26,5 @@ Feature: Run proofs from command line
           When I run `/Users/i847419/.opam/default/bin/coqc -verbose test02.v`
           Then the output should contain:
             """
-            Error
+            Qed.
             """
