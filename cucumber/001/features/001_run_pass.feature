@@ -13,7 +13,7 @@ Feature: Run proofs from command line
            exact proof_of_B.
            Qed.
          """
-          When I run `/Users/i847419/.opam/default/bin/coqc -verbose test.v`
+          When I run `~/.opam/default/bin/coqc -verbose test.v`
           Then the output should not contain:
           """
           Error
@@ -29,7 +29,7 @@ Feature: Run proofs from command line
                exact proof_of_A.
                Qed.
             """
-          When I run `/Users/i847419/.opam/default/bin/coqc -verbose test02.v`
+          When I run `~/.opam/default/bin/coqc -verbose test02.v`
           Then the output should not contain:
             """
             Error
