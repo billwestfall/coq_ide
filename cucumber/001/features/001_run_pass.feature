@@ -16,15 +16,14 @@ Feature: Run proofs from command line
       Scenario: Run a failing proof
           Given a file named "test02.v" with:
             """
-            Theorem Restart_03 : forall a b c:Prop, ((a \/ b) /\ (b \/ c)) -> (a \/ b \/ d).
-            Proof.
-            Add LoadPath "/Users/Shared/Files/cptd/src/" as CpdtTactics.
-            Require Import Classical.
-            Load CpdtTactics.
-            crush.
-            Qed.
+               Theorem my_first_proof : (forall A : Prop, A -> A).
+               Proof.
+               intros A.
+               intros proof_of_A.
+               exact proof_of_A.
+               Qed.
             """
-          When I run `coqc -verbost test02.v`
+          When I run `coqc -verbose test02.v`
           Then the output should contain:
             """
             Error
