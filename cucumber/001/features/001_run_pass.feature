@@ -24,7 +24,7 @@ Feature: Run proofs from command line
                Qed.
             """
           When I run `/Users/i847419/.opam/default/bin/coqc -verbose test02.v`
-          Then the output should contain:
+          Then the output should not contain:
             """
-            Qed.
+            Error
             """
