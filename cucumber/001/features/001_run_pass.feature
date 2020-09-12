@@ -14,13 +14,17 @@ Feature: Run proofs from command line
           """
 
       Scenario: Run a failing proof
-          Given a file named "test02.sh" with:
+          Given a file named "test02.v" with:
             """
-            #!/usr/bin/env bash -v
-
-            coqc -verbose ~/Documents/old/git/coq_ide/cucumber/001/features/test002.v
+            Theorem Restart_03 : forall a b c:Prop, ((a \/ b) /\ (b \/ c)) -> (a \/ b \/ d).
+            Proof.
+            Add LoadPath "/Users/Shared/Files/cptd/src/" as CpdtTactics.
+            Require Import Classical.
+            Load CpdtTactics.
+            crush.
+            Qed.
             """
-          When I run `test02.sh`
+          When I run `coqc -verbost test02.v`
           Then the output should contain:
             """
             Error
