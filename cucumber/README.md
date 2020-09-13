@@ -14,3 +14,5 @@ Load CpdtTactics.
 crush.
 Qed. 
 </pre>
+
+path for coqc is hardcoded in files (like /Applications/CoqIDE_8.12.0.app/Contents/Resources/bin/coqc ), you can update/replace this path with your path
