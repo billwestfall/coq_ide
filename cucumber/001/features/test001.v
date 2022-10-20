@@ -3,4 +3,5 @@ Proof.
 intros A. Show Proof.
 intros proof_of_A. Show Proof.
 exact proof_of_A. Show Proof.
+Print All.
 Qed.
