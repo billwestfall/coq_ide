@@ -3,5 +3,5 @@ Proof.
 intros A. Show Proof.
 intros proof_of_A. Show Proof.
 exact proof_of_A. Show Proof.
-Eval cbv delta in myterm.
+Eval cbv delta in *.
 Qed.
