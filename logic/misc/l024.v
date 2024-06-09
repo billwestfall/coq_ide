@@ -1,4 +1,4 @@
-Theorem neg: forall (a : Prop), a -> ~~a.
+Theorem neg: forall (a : Prop), a <-> ~~a.
 Proof.
   intros.
   auto.
